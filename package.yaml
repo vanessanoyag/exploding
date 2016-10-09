@@ -1,0 +1,32 @@
+name: exploding
+version: 0.1.1
+
+dependencies:
+  - base
+  - ansi-terminal
+  - random
+  - random-shuffle
+
+library:
+  exposed-modules:
+    - ExplodingI
+    - Common
+    - Shuffler
+  source-dirs: src
+  dependencies:
+
+executables:
+  exploding:
+    main: Main.hs
+    source-dirs: src
+    dependencies:
+      - exploding
+      - hpack
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - exploding
+      - hspec
