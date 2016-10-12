@@ -12,6 +12,7 @@ library:
     - ExplodingI
     - Common
     - Shuffler
+    - Game
   source-dirs: src
   dependencies:
 

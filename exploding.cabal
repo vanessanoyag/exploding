@@ -19,6 +19,7 @@ library
       ExplodingI
       Common
       Shuffler
+      Game
   other-modules:
       Main
       Paths_exploding
@@ -38,6 +39,7 @@ executable exploding
   other-modules:
       Common
       ExplodingI
+      Game
       Shuffler
   default-language: Haskell2010
 
