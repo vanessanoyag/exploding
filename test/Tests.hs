@@ -8,6 +8,7 @@ import System.Console.ANSI (Color(Black, Red, Green, Yellow, Blue, Magenta, Cyan
 import ExplodingI
 import Common
 import Shuffler
+import Game
 
 main :: IO ()
 main = hspecWith defaultConfig {configFastFail = True} specs
@@ -17,6 +18,7 @@ specs = describe "exploding" $ do
   interactiveSpecs
   commonSpecs
   shufflerSpecs
+  gameSpecs
 
 interactiveSpecs :: Spec
 interactiveSpecs = describe "explodingInteractive" $ do
@@ -83,17 +85,17 @@ gameSpecs :: Spec
 gameSpecs = describe "Game" $ do
   describe "initGame" $ do
     it "should create 4 players" $ do
-      pendingWith "Implement the initGame function"
-      --let gs = initGame 4
-      --length (players gs) `shouldBe` 4
+      -- pendingWith "Implement the initGame function"
+      let gs = initGame 4
+      length (players gs) `shouldBe` 4
     it "should initialize the deck with 56 cards" $ do
-      pendingWith "Implement the initGame function"
-      --let gs = initGame 4
-      --length (deck gs) `shouldBe` 56
+      -- pendingWith "Implement the initGame function"
+      let gs = initGame 4
+      length (deck gs) `shouldBe` 56
     it "should initialize discard pile to empty" $ do
-      pendingWith "Implement the initGame function"
-      --let gs = initGame 4
-      --length (d_stack gs) `shouldBe` 0
+      -- pendingWith "Implement the initGame function"
+      let gs = initGame 4
+      length (d_stack gs) `shouldBe` 0
   describe "setupGame" $ do
     it "should shuffle the deck" $ do
       pendingWith "Implement the setupGame function"
