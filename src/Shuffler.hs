@@ -11,11 +11,15 @@ shuffleDeck :: State -> IO State
 shuffleDeck state@State{
 					players = ps,
 					deck = d,
-					d_stack = dstack
+					d_stack = dstack,
+					e_players = e,
+					cur_player = c
 				   } = return State {
 				   						players = ps,
 				   						deck = shuffleDeck' d,
-				   						d_stack = dstack
+				   						d_stack = dstack,
+				   						e_players = e,
+				   						cur_player = c
 									}
 
 shuffleDeck' :: Deck -> Deck
@@ -23,5 +27,9 @@ shuffleDeck' d = shuffle' d (length d) s
 
 s = mkStdGen 1000
 
--- shuffled :: (RandomGen gen) => gen -> [Card]
--- shuffled = shuffle' initDeck 153
+
+
+-- shuffleDeck :: State -> IO State
+
+-- -- TODO: Implement a random shuffling algorithm
+-- shuffleDeck state = return (state)
